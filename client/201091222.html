@@ -3,26 +3,34 @@
 </head>
 
 <body>
-
-<script>
-  document.writeln(100 + 200);
-  document.writeln("100"+200);
-  document.writeln('100'+'200');
-  document.writeln("결과 : " + (100+200));
-  document.writeln("결과 : " + 100*200);
-  document.writeln((true > false) + "<br>");
-  document.writeln((true == 1) + "<br>");
-  document.writeln((true === 1) + "<br>");
-  var result;
-  document.writeln((result || "ㅋㅋㅋ") +"<br>");
-</script>
-
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+<div class="center" style="text-align: center;">
+  작성자<input id="작성자" type="text" name="작성자"/><br>
+  제목<input id="제목" type="text" name="제목"/><br>
+  본문<input id="본문" type="text" name="본문"/><br>
+  <button id="write" class="btn btn-success">작성</button>
+  <button id="cancel" class="btn btn-warning">취소</button>
+</div>
+<div class="container">
+  <!--<img src="images/meteor.png" alt=""/>-->
+  <div>게시판</div>
+  <table class="table table-hover">
+    <tr>
+      <td>글번호</td>
+      <td>작성자</td>
+      <td>제목</td>
+    </tr>
+    {{> board}}
+  </table>
+</div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="board">
+  {{#each boards}}
+    <tr>
+      <td>{{글번호}}</td>
+      <td>{{작성자}}</td>
+      <td>{{제목}}</td>
+    </tr>
+  {{/each}}
 </template>
+

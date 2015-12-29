@@ -1,23 +1,24 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+Template.board.helpers({
+  boards: function (err, tmpl) {
+    return Boards.find({});
+  }
+});
+Template.body.events({
+  "click #cancel": function(e, tmpl) {
+    $('#작성자').val('');
+    $('#제목').val('');
+    $('#본문').val('');
+  },
+  "click #write": function(e, tmpl) {
+    var obj = {};
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
+    obj.작성자 = $('#작성자').val();
+    obj.제목 = $('#제목').val();
+    obj.본문 = $('#본문').val();
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
+    Boards.insert(obj);
 
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
+
+  }
+});
+
