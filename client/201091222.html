@@ -1,0 +1,28 @@
+<head>
+  <title>201091222</title>
+</head>
+
+<body>
+
+<script>
+  document.writeln(100 + 200);
+  document.writeln("100"+200);
+  document.writeln('100'+'200');
+  document.writeln("결과 : " + (100+200));
+  document.writeln("결과 : " + 100*200);
+  document.writeln((true > false) + "<br>");
+  document.writeln((true == 1) + "<br>");
+  document.writeln((true === 1) + "<br>");
+  var result;
+  document.writeln((result || "ㅋㅋㅋ") +"<br>");
+</script>
+
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
