@@ -11,8 +11,11 @@ Template.board.rendered = function() {
 }
 Template.board.events({
   "click #removeOneItem": function(e, tmpl) {
-    console.log('clicked');
-    $(e.target).attr('count')
+    var count = $(e.target).attr('count');
+    var obj = Boards.findOne({글번호: parseInt(count)})
+    Boards.remove({
+      _id: obj._id
+    });
   }
 });
 Template.body.events({
