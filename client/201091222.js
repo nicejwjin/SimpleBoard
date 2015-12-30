@@ -3,6 +3,18 @@ Template.board.helpers({
     return Boards.find({});
   }
 });
+Template.board.rendered = function() {
+  $(document).delegate("tr", "click", function(e) {
+    // write your code here
+    $(this).find('button').attr('count')
+  });
+}
+Template.board.events({
+  "click #removeOneItem": function(e, tmpl) {
+    console.log('clicked');
+    $(e.target).attr('count')
+  }
+});
 Template.body.events({
   "click #cancel": function(e, tmpl) {
     $('#작성자').val('');
@@ -11,11 +23,12 @@ Template.body.events({
   },
   "click #write": function(e, tmpl) {
     var obj = {};
-
     obj.작성자 = $('#작성자').val();
     obj.제목 = $('#제목').val();
     obj.본문 = $('#본문').val();
-
+    //글번호를 알아냅시다. 글번호 === 전체 글 갯수 + 1
+    var count = Boards.find().count() + 1
+    obj.글번호 = count;
     Boards.insert(obj);
 
     $('#작성자').val('');
