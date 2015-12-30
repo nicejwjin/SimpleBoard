@@ -4,20 +4,25 @@ Template.board.helpers({
   }
 });
 Template.board.rendered = function() {
-  $(document).delegate("tr", "click", function(e) {
-    // write your code here
-    $(this).find('button').attr('count')
-  });
+  //jQuery로 이벤트 핸들링 샘플
+  //$(document).delegate("tr", "click", function(e) {
+  //  // write your code here
+  //  var count = $(this).find('#removeOneItem').attr('count');
+  //  var obj = Boards.findOne({글번호: parseInt(count)});
+  //  Boards.remove({
+  //    _id: obj._id
+  //  });
+  //});
 }
 Template.board.events({
   "click #removeOneItem": function(e, tmpl) {
-    var count = $(e.target).attr('count');
-    var obj = Boards.findOne({글번호: parseInt(count)})
-    Boards.remove({
-      _id: obj._id
-    });
-  }
-});
+      var count = $(e.target).attr('count');
+      var obj = Boards.findOne({글번호: parseInt(count)});
+      Boards.remove({
+        _id: obj._id
+      });
+    }
+  });
 Template.body.events({
   "click #cancel": function(e, tmpl) {
     $('#작성자').val('');
