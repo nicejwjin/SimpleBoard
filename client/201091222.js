@@ -18,7 +18,9 @@ Template.body.events({
 
     Boards.insert(obj);
 
-
+    $('#작성자').val('');
+    $('#제목').val('');
+    $('#본문').val('');
   }
 });
 
