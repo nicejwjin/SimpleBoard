@@ -1,31 +1,7 @@
-Router.route('/', 'boardList');
+Router.route('/boardWrite', 'boardWrite');
 
-Template.boardList.onCreated(function() {
-  //1
-  console.log('created');
-});
-
-Template.boardList.onRendered(function() {
-  //3
-  console.log('rendered');
-});
-
-Template.boardList.helpers({
-  //2
-  boards: function (err, tmpl) {
-    return Boards.find({});
-  }
-});
-
-Template.boardList.events({
+Template.boardWrite.events({
   //4
-  "click #removeOneItem": function(e, tmpl) {
-    var count = $(e.target).attr('count');
-    var obj = Boards.findOne({글번호: parseInt(count)});
-    Boards.remove({
-      _id: obj._id
-    });
-  },
   "click #cancel": function(e, tmpl) {
     $('#작성자').val('');
     $('#제목').val('');
@@ -57,6 +33,8 @@ Template.boardList.events({
     $('#작성자').val('');
     $('#제목').val('');
     $('#본문').val('');
+
+    Router.go('/');
   }
 });
 
