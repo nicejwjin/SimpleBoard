@@ -1,0 +1,37 @@
+<template name="boardList">
+  <div class="container">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon3">작성자</span>
+      <input type="text" class="form-control" id="작성자" aria-describedby="basic-addon3">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon3">제목</span>
+      <input type="text" class="form-control" id="제목" aria-describedby="basic-addon3">
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon3">본문</span>
+      <input type="text" class="form-control" id="본문" aria-describedby="basic-addon3">
+    </div>
+    <div class="center" style="text-align: center;">
+      <button id="write" class="btn btn-success">작성</button>
+      <button id="cancel" class="btn btn-warning">취소</button>
+    </div>
+    <!--<img src="images/meteor.png" alt=""/>-->
+    <div>게시판</div>
+    <table class="table table-hover">
+      <tr>
+        <td>글번호</td>
+        <td>작성자</td>
+        <td>제목</td>
+      </tr>
+      {{#each boards}}
+        <tr>
+          <td>{{글번호}}</td>
+          <td>{{작성자}}</td>
+          <td>{{제목}}</td>
+          <td><button count="{{글번호}}" id="removeOneItem">x</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</template>
