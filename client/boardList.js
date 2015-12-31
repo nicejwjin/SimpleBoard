@@ -8,6 +8,10 @@ Template.boardList.onCreated(function() {
 Template.boardList.onRendered(function() {
   //3
   console.log('rendered');
+  //$('.table > tbody > tr').click(function() {
+  //  // row was clicked
+  //  Router.go('/boardDetail', {_id: });
+  //});
 });
 
 Template.boardList.helpers({
