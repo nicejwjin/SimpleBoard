@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>영화 리뷰</title>
+	<link rel="stylesheet" href="our-movies.css">
+	<script type="text/JavaScript">
+		var login = "로그인 하세요";
+	</script>	
+</head>
+<body>
+	<!-- 전체를 감싸는 태그 -->
+	<div id="page-wrapper">
+		<!-- 헤더 -->	
+		<header id="main-header">
+			<div>
+			<ul>
+				<li class="about-member"><a href="#" onclick="alert(login)">나의 영화목록</a></li>
+				<li class="about-member"><a href="join.html">회원가입</a></li>
+				<li class="about-member"><a class="login" href="login.html">로그인</a></li>
+			<ul>
+			</div>
+
+			<img class="main-img" src="main.jpg" width="200" height="150">
+			<!-- 헤더 안의 내비게이션 -->
+			<nav id="main-navigation">
+				<div class="pull-left">
+					<ul>
+						<li class="menu-title"><a href="index.html">HOME</a></span></li>
+						<li class="menu-title"><a href="goMovie.html">보러갈거야</a></span></li>
+						<li class="menu-title"><a href="reviewOfMovie.html">영화 리뷰</a></span></li>
+						<li class="menu-title"><a href="placeOfMovie.html">영화 공간</a></span></li>
+					</ul>
+				</div>
+				<div class="pull-right">
+					<div class="search-bar">
+						<form>
+							<input type="text" class="input-search"/>
+							<input type="submit" class="input-search-submit" value="검색" />
+						</form>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		
+		<!-- 본문 -->
+		<div id="content">
+			<section id="main-section">
+				<div class="movie-review">
+					<div>
+					이곳은 영화 리뷰를 올리는 곳 입니다.<br>
+					영화에 대한 다양한 생각들을 공유해보세요.<br>
+					다른 사람의 리뷰가 마음에 든다면 '좋아요'를 눌러주세요.<br>
+					매달 '좋아요'를 가장 많이 받은 사람에게 영화티켓 한 장을 드립니다.
+					</div>
+					<div>
+						<button>글쓰기</button>
+					</div>
+				</div>
+				</div>
+			</section>
+			<aside id="main-aside">
+				<div class="aside-list">
+					<h3>영화를 꿈꾸다</h3>
+					<ul>
+						<li><a href="#">영화 모임</a></li>
+						<li><a href="#">소셜 펀딩:영화</a></li>
+						<li><a href="#">영화 관련 구직 공고</a></li>
+					</ul>
+				</div>
+				<div class="welcome">
+					<img src="만세사진.jpg" width="170">
+					<p>환영합니다.</p>
+					<br>
+				</div>
+				<div class="aside-list">
+					<a href="http://www.kofic.or.kr/kofic/business/main/main.do" ><img src="영화진흥위원회.png" width="170" height="30"></a>
+					<a href="http://www.koreafilm.or.kr/index.asp" ><img src="한국영상자료원.jpg" width="170" height="30"></a>
+					<a href="http://www.cine21.com/" ><img src="씨네21.jpg" width="170" height="30"></a>
+					<a href="http://www.fkmwu.org/" ><img src="전국영화산업노동조합.jpg" width="170" height="30"></a>
+				</div>
+			</aside>
+		</div>
+
+		<!-- 푸터 -->
+		<footer id="main-footer">
+			<div class="footer-box">
+			<br>
+			<a href="#">Created by rememberdag@naver.com</a>
+			</div>
+		</footer>
+	</div>			
+</html>
