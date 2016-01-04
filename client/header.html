@@ -1,0 +1,32 @@
+<template name="header">
+  <header id="main-header">
+    <div>
+      <ul>
+        <li class="about-member" ><a href="#" onclick="alert(login)">나의 영화목록</a></li>
+        <li class="about-member"><a href="join.html">회원가입</a></li>
+        <li class="about-member"><a class="login" href="login.html">로그인</a></li>
+      </ul>
+    </div>
+
+    <img class="main-img" src="main.jpg" width="200" height="150">
+    <!-- 헤더 안의 내비게이션 -->
+    <nav id="main-navigation">
+      <div class="pull-left">
+        <ul>
+          <li class="menu-title"><a href="index.html">HOME</a></li>
+          <li class="menu-title"><a href="goMovie">보러갈거야</a></li>
+          <li class="menu-title"><a href="reviewOfMovie.html">영화 리뷰</a></li>
+          <li class="menu-title"><a href="placeOfMovie.html">영화 공간</a></li>
+        </ul>
+      </div>
+      <div class="pull-right">
+        <div class="search-bar">
+          <form>
+            <input type="text" class="input-search"/>
+            <input type="submit" class="input-search-submit" value="검색" />
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>

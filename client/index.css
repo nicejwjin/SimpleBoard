@@ -1,0 +1,252 @@
+* {
+  margin: 0; padding: 0;
+  font-family: '맑은 고딕', 'Margun Gothic' 'Mono space';
+}
+a {text-decoration: none;}
+li {list-style: none;}
+
+
+.pull-left {float: left;}
+.pull-right{float: right;}
+
+body {
+  width: 960px; margin: 0 auto;
+  background: black;
+}
+
+#page-wrapper {
+  background: white;
+  margin: 40px 0; padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+
+#main-header{padding: 5px 5px;}
+
+#main-header li a {
+  color: gray;
+}
+
+.about-member {
+  float: right;
+  font-size: 15px;
+  margin: 10px;
+}
+
+
+.main-img {
+  float: left;
+}
+
+#main-navigation {
+  border-top: 1px solid #C8C8C8;
+  border-bottom: 1px solid #C8C8C8;
+  margin: 107px 5px 5px 5px;
+  height: 40px;
+}
+.menu {
+  float: left;
+  position: relative;
+}
+.menu-title:hover {
+  background: black;
+  color: white;
+}
+
+
+#main-navigation li a {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#main-navigation li a:hover {color: white;}
+
+.menu-title {
+  display: inline-block;
+  height: 30px;
+  margin: 0 0 0 15px;
+  padding: 5px 20px;
+}
+
+
+.search-bar {
+  height: 26px;
+  padding: 7px;
+}
+.input-search {
+  display: block;
+  float: left;
+
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 15px 0 0 15px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+  width: 120px; height: 24px;
+  padding: 0 0 0 10px;
+  font-size: 12px;
+  color: #555555;
+}
+.input-search:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.input-search-submit {
+  display: block;
+  float: left;
+
+  width: 50px; height: 26px;
+  border-radius: 0 15px 15px 0;
+  border: 1px solid #CCCCCC;
+
+  margin-left: -1px;
+
+  vertical-align: top;
+
+  display: inline-block;
+}
+
+
+#content { overflow: hidden;}
+
+#main-section {
+  float: left;
+  width: 720px;
+  margin-left: 1px;
+  padding: 5px;
+  display: inline-block;
+}
+
+#main-section hr {
+  margin : 10px 0;
+}
+
+.movie-home {
+  width: 709px; height: 500px;
+  border-width: thick;
+  border-style: dashed;
+  border-color: black;
+  border-radius: 30px;
+  display: inline-block;
+}
+.movie-home > h1 {
+  margin: 10px 30px;
+  color: #589AB0;
+}
+.movie-home > h2 {
+  margin: 10px 30px;
+  color: #589AB0;
+}
+.movie-home > p {
+  margin: 10px 30px;
+  font-weight: bold;
+}
+
+.movie-see {
+  margin: 0 auto;
+  width: 720px;
+  border-left: medium groove rgba(200, 200, 200, 0.2);
+  border-right: medium groove rgba(200, 200, 200, 0.2);
+  font-size: 1em;
+  display: inline-block;
+}
+.movie-see img {
+  float: left;
+  margin: 10px;
+}
+
+.movie-see h2 {
+  color: #589AB0;
+  margin: 10px 5px 5px 5px;
+  padding-top: 10px
+}
+
+.movie-see p {
+  margin: 5px;
+  width: 650px;
+}
+
+.movie-box {
+  display: block;
+}
+
+.button {
+  display: block;
+  width: 100px;
+  height: 30px;
+  float: right;
+  background-color : #15E8A2;
+  border-radius : 10px;
+  box-shadow: 5px 5px 5px #A9A9A9;
+  margin-right: 50px;
+}
+.button > a {
+  font-style: bold;
+  color: black;
+  text-decoration : none;
+  display : block;
+  line-height : 30px;
+  text-align: center;
+}
+
+.movie-review {
+  width: 710px; height: 500px;
+  font-size: 1em;
+  display: inline-block;
+}
+.movie-review > div {
+  font-weight: bold;
+  margin: 15px;
+  text-align: center;
+}
+
+.movie-space {
+  width: 710px; height: 500px;
+  font-size: 1em;
+  display: inline-block;
+}
+.movie-space > div {
+  font-weight: bold;
+  margin: 15px;
+  text-align: center;
+}
+
+
+#main-aside {
+  float: right;
+  width: 185px;
+}
+
+.aside-list { padding: 10px 0 30px 0;}
+.aside-list > h3 {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 0 10px 0;
+}
+.aside-list li a {
+  margin-left: 8px;
+  font-size: 15px;
+  color: #6C6C6C;
+}
+
+.welcome > p {
+  text-align: center;
+  font-weight: bold;
+}
+
+#main-footer {
+  text-align: center;
+  color: black;
+}
+
+.footer-box {
+  height: 40px;
+  margin: 10px;
+}
+.footer-box > a {
+  float: right;
+}

@@ -1,20 +1,18 @@
 <head>
-  <title>sweet my home</title>
+  <meta charset="utf-8">
+  <title>Our-movies</title>
+  <!--<link rel="stylesheet" href="our-movies.css">\-->
+  <script type="text/JavaScript">
+    var login = "로그인 하세요";
+  </script>
 </head>
 
 <template name="layout">
-  <div class="container">
-    <header id="mainHeader">
-      <!--menu-->
-      my sweet home
-    </header>
-    <main>
-      <!--contents-->
-      {{> yield}}
-    </main>
-    <footer>
-      <!--address / phone-->
-      서울시 영등포구 여의도동 ... / 02-xxxx-xxxx
-    </footer>
+  <div id="page-wrapper">
+    <!--menu-->
+    {{> header}}
+    <!--contents-->
+    {{> yield}}
+    {{> footer}}
   </div>
 </template>
