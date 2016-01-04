@@ -24,10 +24,12 @@ Template.boardList.helpers({
 Template.boardList.events({
   //4
   "click #removeOneItem": function(e, tmpl) {
-    var count = $(e.target).attr('count');
-    var obj = Boards.findOne({글번호: parseInt(count)});
+    //console.log(this);
+    //var count = $(e.target).attr('count');
+    //var obj = Boards.findOne({글번호: parseInt(count)});
+    console.log($(tmpl));
     Boards.remove({
-      _id: obj._id
+      _id: this._id
     });
   },
   "click #cancel": function(e, tmpl) {
