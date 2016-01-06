@@ -16,18 +16,34 @@ Template.boardList.onRendered(function() {
 
 Template.boardList.helpers({
   //2
-  boards: function (err, tmpl) {
+  boards: function () {
     return Boards.find({});
+  },
+  isLogin: function() {
+    if(Meteor.user() === null
+      || Meteor.user() === undefined) {
+      //execute
+      return false;
+    }
+    else return true;
   }
+
 });
 
 Template.boardList.events({
   //4
-  "click #removeOneItem": function(e, tmpl) {
+  "click #removeOneItem": function(event, template) {
+    var a = 100;
+    a++;
+    a--;
+    var obj = {
+      key: 'value'
+    };
+    debugger;
+    debugger;
     //console.log(this);
     //var count = $(e.target).attr('count');
     //var obj = Boards.findOne({글번호: parseInt(count)});
-    console.log($(tmpl));
     Boards.remove({
       _id: this._id
     });

@@ -1,8 +1,12 @@
 <template name="boardList">
   <!--<img src="images/meteor.png" alt=""/>-->
-  <a href="/boardWrite" style="background-color: red;">
-    <button class="btn btn-primary" id="lnk_write">글작성</button>
-  </a>
+  {{#if isLogin}}
+    <a href="/boardWrite" style="background-color: red;">
+      <button class="btn btn-primary" id="lnk_write">글작성</button>
+    </a>
+  {{else}}
+    글을 작성하시려면 로그인을 해주세요!!
+  {{/if}}
 
   <table class="table table-hover">
     <thead>
@@ -15,10 +19,10 @@
     <tbody>
     {{#each boards}}
       <tr>
-          <td>{{글번호}}</td>
-          <td>{{작성자}}</td>
-          <td><a href="/boardDetail/{{_id}}">{{제목}}</a></td>
-          <td><button count="{{글번호}}" id="removeOneItem">x</button></td>
+        <td>{{글번호}}</td>
+        <td>{{작성자}}</td>
+        <td><a href="/boardDetail/{{_id}}">{{제목}}</a></td>
+        <td><button count="{{글번호}}" id="removeOneItem">x</button></td>
       </tr>
     {{/each}}
     </tbody>

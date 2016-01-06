@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 coffeescript
 twbs:bootstrap
 iron:router
+accounts-password
+ian:accounts-ui-bootstrap-3

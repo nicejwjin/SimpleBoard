@@ -8,8 +8,11 @@ Template.boardWrite.events({
     $('#본문').val('');
   },
   "click #write": function(e, tmpl) {
+    if (!Meteor.user()) {
+      return alert('로그인을 해주세요!!!');
+    }
     var obj = {};
-    obj.작성자 = $('#작성자').val();
+    obj.작성자 = Meteor.user().emails[0].address;
     obj.제목 = $('#제목').val();
     if(obj.작성자.length <= 0 || obj.제목.length <= 0) {
       //error
