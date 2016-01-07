@@ -1,7 +1,7 @@
 <template name="header">
   <div class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand" href="/">Home</a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -11,10 +11,32 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/Logs">Logs</a></li>
+        <li class=""><a href="/Logs">Logs</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class=""><a href="/Likes">Likes</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        {{> loginButtons}} <!-- here -->
+        <!--{{> loginButtons}} &lt;!&ndash; here &ndash;&gt;-->
+        {{#if currentUser}}
+          <!--//로그인 되어 있을-->
+          {{email}}
+          <button name="Logout">Logout</button>
+        {{else}}
+          <!--로그인이 안되어 있을때-->
+          <table>
+            <tr>
+              <td>ID</td>
+              <td><input type="text" name="ID" width="200px"/></td>
+              <td>PW</td>
+              <td><input type="password" name="PW" width="200px"/></td>
+              <td><Button name="Login">Login</Button></td>
+              <td><Button name="Join">Join</Button></td>
+            </tr>
+          </table>
+          {{> Join}}
+        {{/if}}
+
       </ul>
     </div>
   </div>
