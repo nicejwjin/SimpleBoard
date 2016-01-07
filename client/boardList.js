@@ -33,14 +33,6 @@ Template.boardList.helpers({
 Template.boardList.events({
   //4
   "click #removeOneItem": function(event, template) {
-    var a = 100;
-    a++;
-    a--;
-    var obj = {
-      key: 'value'
-    };
-    debugger;
-    debugger;
     //console.log(this);
     //var count = $(e.target).attr('count');
     //var obj = Boards.findOne({글번호: parseInt(count)});

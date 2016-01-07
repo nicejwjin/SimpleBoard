@@ -3,18 +3,22 @@
 </head>
 
 <template name="layout">
-  <div class="container">
-    <header id="mainHeader">
-      <!--menu-->
-      {{> header}}
-    </header>
-    <main>
-      <!--contents-->
-      {{> yield}}
-    </main>
-    <footer>
-      <!--address / phone-->
-      서울시 영등포구 여의도동 ... / 02-xxxx-xxxx
-    </footer>
-  </div>
+  {{#if currentUser}}
+    <div class="container">
+      <header id="mainHeader">
+        <!--menu-->
+        {{> header}}
+      </header>
+      <main>
+        <!--contents-->
+        {{> yield}}
+      </main>
+      <footer>
+        <!--address / phone-->
+        서울시 영등포구 여의도동 ... / 02-xxxx-xxxx
+      </footer>
+    </div>
+  {{else}}
+    {{> loginButtons}}
+  {{/if}}
 </template>
