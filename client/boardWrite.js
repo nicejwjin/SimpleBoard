@@ -32,6 +32,9 @@ Template.boardWrite.events({
     }
 
     Boards.insert(obj);
+    obj.createdAt = new Date();
+    obj.type = 'boardWriting';
+    Logs.insert(obj);
 
     $('#작성자').val('');
     $('#제목').val('');

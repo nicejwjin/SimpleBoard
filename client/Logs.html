@@ -1,0 +1,16 @@
+<template name="Logs">
+  <ul>
+    {{#each logs}}
+      <li>
+        {{type}}
+        {{createdAt}}
+        {{#if url}}
+          {{url}}
+        {{/if}}
+        {{#if 제목}}
+          {{제목}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</template>
