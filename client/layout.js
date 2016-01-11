@@ -8,4 +8,3 @@ Router.onBeforeAction(function(req, res, next) {
   Logs.insert(req);
   return this.next();
 });
-

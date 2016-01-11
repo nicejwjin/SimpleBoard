@@ -1,8 +1,21 @@
+Session.set('curPageNum', 1);
+Session.set('search', null);
+
 Router.route('/', 'boardList');
 
 Template.boardList.onCreated(function() {
   //1
   console.log('created');
+  //var obj = {};
+  //
+  //for(var i = 0; i < 50; i++) {
+  //  obj.제목 = i;
+  //  obj.작성자 = Meteor.user();
+  //  obj.글번호 = i;
+  //  obj.본문 = i;
+  //  Boards.insert(obj);
+  //}
+
 });
 
 Template.boardList.onRendered(function() {
@@ -33,7 +46,23 @@ Template.boardList.helpers({
   },
   //2
   boards: function () {
-    return Boards.find({});
+    // total = 전체 갯수 파악
+    // curCount = 현재 페이지에 보여줄 갯수 = 10
+    // curPageNum = 현재 페이지 넘버 = 1~페이지 수만큼
+    var total = Boards.find({}).fetch().length;
+    var curCount = 10;
+
+    var condition = Session.get('search')
+    if (condition == null) {
+      condition = {};
+    }
+    else {
+      condition = {제목: {$regex: condition}}
+    }
+    return Boards.find(condition, {
+      limit: curCount,
+      skip: (curCount*Session.get("curPageNum")) - curCount
+    });
   },
   isLogin: function() {
     if(Meteor.user() === null
@@ -47,6 +76,22 @@ Template.boardList.helpers({
 });
 
 Template.boardList.events({
+  "click #btnSearch": function(evt, tmpL) {
+    var word = $('#inpSearch').val();
+    Session.set('search', word);
+
+  },
+  "click #Prev": function(evt, tmpL) {
+    var pn = Session.get('curPageNum');
+    if(parseInt(pn) <= 1) {
+      return alert('첫페이지입니다.')
+    }
+    Session.set('curPageNum', --pn);
+  },
+  "click #Next": function(evt, tmpL) {
+    var pn = Session.get('curPageNum');
+    Session.set('curPageNum', ++pn);
+  },
   "click #btnLike": function(evt, tmpl) {
     var user = Meteor.user();
     if(!user) {
@@ -101,4 +146,3 @@ Template.boardList.events({
     $('#본문').val('');
   }
 });
-
