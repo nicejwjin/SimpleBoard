@@ -1,2 +1,2 @@
-# twitter
-simple twitter example with meteor.js
+# SimepleBoard
+simple board example with meteor.js
